@@ -115,7 +115,7 @@
 
         <section data-markdown>
           <script type="text/template">
-          # Benifits
+          # Benefits
 
           - You are replacable
           - The system documents itself
@@ -125,10 +125,21 @@
           </script>
         </section>
 
+        <section data-markdown>
+          <script type="text/template">
+          # Automation isn't new ...
 
-				<section>
-					<h2>Ansible: create an instance</h2>
-					<pre class="stretch"><code data-trim contenteditable>
+          - ... but cloud enables automation
+          - IaaS replaces messy components with simple abstractions
+          - Everything has an API
+          - With practice automated becomes easier than manual
+          - Testing changes in a clean environment
+          </script>
+        </section>
+
+	<section>
+		<h2>Ansible: create an instance</h2>
+		<pre><code data-trim contenteditable>
 ---
 - name: Pouta ansible demo
   hosts: localhost
@@ -166,11 +177,61 @@
           - net-id: "{{ demo_network }}"
         floating_ips:
           - "{{ demo_floating_ip }}"
-					</code></pre>
-				</section>
+		</code></pre>
+	</section>
+
+	<section>
+		<h2>Ansible: Configure a web server</h2>
+		<pre class="stretch"><code data-trim contenteditable>
+---
+- name: Configure demo instance to be a webserver
+  hosts: demo
+  remote_user: cloud-user
+  sudo: yes
+
+  vars:
+    demo_photo: kajaani.jpg
+    demo_greeting: "Hello from Kajaani!"
+
+  tasks:
+   - name: Install a webserver
+     yum: name=httpd state=present
+
+   - name: Deploy demo web page
+     template: src=templates/demo.html.j2 dest=/var/www/html/index.html owner=apache group=apache mode=0644
+
+   - name: Copy a picture of Kajaani
+     copy: src=resources/kajaani.jpg dest=/var/www/html/kajaani.jpg owner=apache group=apache mode=0644
+
+   - name: Configure firewall
+     template: src=templates/iptables.j2 dest=/etc/sysconfig/iptables owner=root group=root mode=0600
+     notify:
+       - reload iptables
+
+   - name: Start apache
+     service: name=httpd state=started enabled=yes
+
+  handlers:
+    - name: reload iptables
+      service: name=iptables state=reloaded
+		</code></pre>
+	</section>
 
         <section>
-          <iframe src="resources/ansible-create-instance.html" width="1800" height="768" style="margin:0;overflow:hidden;border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen></iframe>
+	  <iframe src="resources/ansible-create-instance.html" width="1024" height="768" style="margin:none;overflow:hidden;border:none;" allowfullscreen></iframe>
+	  <p><a href="resources/ansible-create-instance.html">view recording</a></p>
+        </section>
+
+        <section>
+          <iframe src="resources/test-instance.html" width="1024" height="768" style="margin:none;overflow:hidden;border:none;" allowfullscreen></iframe>
+        </section>
+
+        <section>
+          <iframe src="resources/install-application.html" width="1024" height="768" style="margin:0;overflow:hidden;border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen></iframe>
+        </section>
+
+        <section>
+          <iframe src="resources/test-application.html" width="1024" height="768" style="margin:0;overflow:hidden;border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen></iframe>
         </section>
 
 				<section>
