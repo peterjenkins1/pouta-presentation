@@ -4,9 +4,9 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title>Pouta presentation</title>
 
-		<meta name="description" content="Advice on using IaaS after one year of operations">
+		<meta name="description" content="Using and operating OpenStack IaaS">
 		<meta name="author" content="Peter Jenkins">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -44,7 +44,8 @@
 			<div class="slides">
 				<section>
           <h1>pouta.csc.fi</h1>
-          <h3>Advice on using IaaS after one year of operations</h3>
+          <h3>Using and operating an OpenStack IaaS</h3>
+          <h3>Peter Jenkins</h3>
 				</section>
 
 				<section>
@@ -76,20 +77,7 @@
             <li>OpenStack based cloud. Hosted in Kajaani, Finland</li>
           </ul>
 				</section>
-        <section data-markdown>
-				</section>
 
-				<section data-markdown>
-          <script type="text/template">
-          ![CSC Logo](https://www.csc.fi/csc-frontpage-6.2-theme/images/csc-logo-teksti-en.png)
-
-          - Company is 41 years old
-          - FUNET, supercomputers, data archives, datacenters
-          - Cloud (IaaS) services for 3 years
-          - Now providing general public cloud: Pouta
-          - OpenStack based cloud. Hosted in Kajaani, Finland
-          </script>
-				</section>
         <section data-markdown>
           <script type="text/template">
           # Advert
@@ -114,127 +102,47 @@
           </section>
 				</section>
 
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=cube#/transitions">Cube</a> -
-						<a href="?transition=page#/transitions">Page</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a> -
-						<a href="?transition=linear#/transitions">Linear</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?#/transitions">Default</a>
-					</p>
-				</section>
-
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						Reveal.js comes with a few themes built in: <br>
-						<a href="?#/themes">Default</a> -
-						<a href="?theme=sky#/themes">Sky</a> -
-						<a href="?theme=beige#/themes">Beige</a> -
-						<a href="?theme=simple#/themes">Simple</a> -
-						<a href="?theme=serif#/themes">Serif</a> -
-						<a href="?theme=night#/themes">Night</a> <br>
-						<a href="?theme=moon#/themes">Moon</a> -
-						<a href="?theme=solarized#/themes">Solarized</a>
-					</p>
-					<p>
-						<small>
-							* Theme demos are loaded after the presentation which leads to flicker. In production you should load your theme in the <code>&lt;head&gt;</code> using a <code>&lt;link&gt;</code>.
-						</small>
-					</p>
-				</section>
-
 				<section>
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the background.
-					</p>
-				</section>
-
-				<section data-state="customevent">
-					<h2>Custom Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
-				</section>
-
-				<section>
-					<section data-background="#007777">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#007777"</code> on a slide to change the full page background to the given color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="image navigate-down">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code>&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Repeated Image Backgrounds</h2>
-						<pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-				</section>
-
-				<section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
-					<h2>Background Transitions</h2>
-					<p>
-						Pass reveal.js the <code>backgroundTransition: 'slide'</code> config argument to make backgrounds slide rather than fade.
-					</p>
-				</section>
-
-				<section data-transition="linear" data-background="#8c4738" data-background-transition="slide">
-					<h2>Background Transition Override</h2>
-					<p>
-						You can override background transitions per slide by using <code>data-background-transition="slide"</code>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
-				</section>
-
-				<section>
-					<h2>Pretty Code</h2>
+					<h2>Ansible: create an instance</h2>
 					<pre><code data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
+---
+- name: Pouta ansible demo
+  hosts: localhost
+  gather_facts: false
 
-    var nodes = document.querySelectorAll( selector );
+  vars:
+    pouta_username: "{{ lookup('env','OS_USERNAME') }}"
+    pouta_password: "{{ lookup('env','OS_PASSWORD') }}"
+    tenant_name: "{{ lookup('env','OS_TENANT_NAME') }}"
+    auth_url: "{{ lookup('env','OS_AUTH_URL') }}"
 
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
+    pouta_tiny: 1a0f1143-47b5-4e8a-abda-eba52ae3c5b9
+    pouta_centos65: 62f023f2-0983-41ba-8dc4-59b9d5cd32d1
 
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
-}
+    # These will need changing.
+    demo_key: demo
+    demo_security_groups: default,demo
+    demo_floating_ip: 86.50.168.144
+    demo_network: 09c9a0ff-72aa-4172-ae16-4fa8d738b15e
+
+  tasks:
+    - name: Create a virtual machine
+      nova_compute:
+        state: present
+        name: pouta-demo
+        login_username: "{{ pouta_username }}"
+        login_password: "{{ pouta_password }}"
+        login_tenant_name: "{{ tenant_name }}"
+        auth_url: "{{ auth_url }}"
+        image_id: "{{ pouta_centos65 }}"
+        key_name: "{{ demo_key }}"
+        flavor_id: "{{ pouta_tiny }}"
+        security_groups: "{{ demo_security_groups }}"
+        nics:
+          - net-id: "{{ demo_network }}"
+        floating_ips:
+          - "{{ demo_floating_ip }}"
 					</code></pre>
-					<p>Courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
 				</section>
 
 				<section>
@@ -325,6 +233,10 @@ function linkify( selector ) {
 			// Full list of configuration options available here:
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
+
+        width: 1968,
+        height: 1080,
+
 				controls: true,
 				progress: true,
 				history: true,
